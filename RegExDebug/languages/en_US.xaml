@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:ms="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Menu-->
+    <ms:String x:Key="mi_debug">Debug</ms:String>
+    <ms:String x:Key="mi_match">Match</ms:String>
+    <ms:String x:Key="mi_replace">Replace</ms:String>
+    <ms:String x:Key="mi_igonre_case">Ignore Case(case-insensitive matching)</ms:String>
+    <ms:String x:Key="mi_multiline">Multiline(Let ^ and $ to match at the beginning and end of any line, not just the entire string)</ms:String>
+    <ms:String x:Key="mi_singleline">Signleline(Let . to match all characters including \n)</ms:String>
+    <ms:String x:Key="mi_group">ExlicitCapture(the only valid captures are explicitly named or numbered (&lt;name>...) groups of the form)</ms:String>
+    <ms:String x:Key="mi_space">IgnorePatternWhitespace(Ignore unescaped whitespace in patterns and enable comments marked by #)</ms:String>
+    <ms:String x:Key="mi_script">ECMAScript(Enable ECMAScript compliant behavior, this can only be used with IgnoreCase, Multiline)</ms:String>
+    <ms:String x:Key="mi_culture">CultureInvariant(Ignore cultural differences in languages)</ms:String>
+    <ms:String x:Key="mi_right">RightToLeft(Searches are performed right-to-left instead of left-to-right)</ms:String>
+    <ms:String x:Key="mi_language">语言</ms:String>
+    <ms:String x:Key="mi_about">About</ms:String>
+
+    <ms:String x:Key="gp_regex_title">Pattern</ms:String>
+    <ms:String x:Key="gp_replace_title">Replace Content</ms:String>
+    <ms:String x:Key="gp_source_title">Source Content</ms:String>
+    <ms:String x:Key="gp_source_words">chars</ms:String>
+    <ms:String x:Key="gp_result_title">Result</ms:String>
+    <ms:String x:Key="gp_result_items">items</ms:String>
+    <ms:String x:Key="gp_result_time_unit">ms</ms:String>
+    <ms:String x:Key="gp_result_cm_copy">Copy to Clipboard</ms:String>
+    <ms:String x:Key="gp_result_cm_export">Export to CSV</ms:String>
+    
+</ResourceDictionary>

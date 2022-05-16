@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:ms="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Menu-->
+    <ms:String x:Key="mi_debug">调试</ms:String>
+    <ms:String x:Key="mi_match">匹配</ms:String>
+    <ms:String x:Key="mi_replace">替换</ms:String>
+    <ms:String x:Key="mi_igonre_case">忽略大小写（不区分大小写）</ms:String>
+    <ms:String x:Key="mi_multiline">多行模式（使 ^ 和 $ 匹配任意一行的首尾，而不仅是整个字符串的首尾）</ms:String>
+    <ms:String x:Key="mi_singleline">单行模式（使 . 匹配包含 \n 在内的所有字符）</ms:String>
+    <ms:String x:Key="mi_group">显式捕获（指定唯一有效的捕获是显式命名或编号的(&lt;name>...)形式的组）</ms:String>
+    <ms:String x:Key="mi_space">忽略空白（忽略模式中的非转义空白并启用由 # 标记的注释）</ms:String>
+    <ms:String x:Key="mi_script">ECMAScript（启用符合 ECMAScript 的行为，此项仅能与 IgnoreCase，Multiline 一起使用）</ms:String>
+    <ms:String x:Key="mi_culture">忽略文化（指定忽略语言中的区域性差异）</ms:String>
+    <ms:String x:Key="mi_right">从右至左（指定搜索从右向左而不是从左向右进行）</ms:String>
+    <ms:String x:Key="mi_language">Language</ms:String>
+    <ms:String x:Key="mi_about">关于</ms:String>
+
+    <ms:String x:Key="gp_regex_title">模式</ms:String>
+    <ms:String x:Key="gp_replace_title">替换内容</ms:String>
+    <ms:String x:Key="gp_source_title">源文本</ms:String>
+    <ms:String x:Key="gp_source_words">字符</ms:String>
+    <ms:String x:Key="gp_result_title">结果</ms:String>
+    <ms:String x:Key="gp_result_items">项</ms:String>
+    <ms:String x:Key="gp_result_time_unit">毫秒</ms:String>
+    <ms:String x:Key="gp_result_cm_copy">复制到剪贴板</ms:String>
+    <ms:String x:Key="gp_result_cm_export">导出到CSV</ms:String>
+</ResourceDictionary>
