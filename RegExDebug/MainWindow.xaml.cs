@@ -25,19 +25,5 @@ namespace RegExDebug
             InitializeComponent();
         }
 
-        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
-        {
-            sv_source_lbl.ScrollToVerticalOffset(e.VerticalOffset);
-        }
-
-        private void ScrollViewer_ScrollChanged_1(object sender, ScrollChangedEventArgs e)
-        {
-            sv_regex_lbl.ScrollToVerticalOffset(e.VerticalOffset);
-        }
-
-        private void ScrollViewer_ScrollChanged_2(object sender, ScrollChangedEventArgs e)
-        {
-            sv_result_lbl.ScrollToVerticalOffset(e.VerticalOffset);
-        }
     }
 }

@@ -252,67 +252,38 @@ namespace RegExDebug.ViewModel
         #region Binding Commands
         public RelayCommand<object> ChangeLanguageCommand
         {
-            get
-            {
-                if (_changeLanguageCommand == null)
-                {
-                    _changeLanguageCommand = new RelayCommand<object>(ChangeLanguageAction);
-                }
-                return _changeLanguageCommand;
-            }
+            get => _changeLanguageCommand ?? (_changeLanguageCommand = new RelayCommand<object>(ChangeLanguageAction));
             set => _changeLanguageCommand = value;
         }
 
         public RelayCommand<object> DebugCommand
         {
-            get
-            {
-                if (_debugCommand == null)
-                {
-                    _debugCommand = new RelayCommand<object>(DebugAction);
-                }
-                return _debugCommand;
-            }
+            get => _debugCommand ?? (_debugCommand = new RelayCommand<object>(DebugAction));
             set => _debugCommand = value;
         }
 
         public RelayCommand<object> AboutCommand
         {
-            get
-            {
-                if (_aboutCommand == null)
-                {
-                    _aboutCommand = new RelayCommand<object>(AboutAction);
-                }
-                return _aboutCommand;
-            }
+            get => _aboutCommand ?? (_aboutCommand = new RelayCommand<object>(AboutAction));
             set => _aboutCommand = value;
         }
 
         public RelayCommand<object> ExportCsvCommand
         {
-            get
-            {
-                if (_exportCsvCommand == null)
-                {
-                    _exportCsvCommand = new RelayCommand<object>(ExportCsvAction);
-                }
-                return _exportCsvCommand;
-            }
+            get => _exportCsvCommand ?? (_exportCsvCommand = new RelayCommand<object>(ExportCsvAction));
             set => _exportCsvCommand = value;
         }
 
         public RelayCommand<object> CopyCommand
         {
-            get
-            {
-                if (_copyCommand == null)
-                {
-                    _copyCommand = new RelayCommand<object>(CopyAction);
-                }
-                return _copyCommand;
-            }
+            get => _copyCommand ?? (_copyCommand = new RelayCommand<object>(CopyAction));
             set => _copyCommand = value;
+        }
+
+        public RelayCommand<object> ScrollChangedCommand
+        {
+            get => _scrollChangedCommand ?? (_scrollChangedCommand = new RelayCommand<object>(ScrollChangedAction));
+            set => _scrollChangedCommand = value;
         }
 
 
@@ -322,9 +293,17 @@ namespace RegExDebug.ViewModel
         private RelayCommand<object> _aboutCommand;
         private RelayCommand<object> _exportCsvCommand;
         private RelayCommand<object> _copyCommand;
+        private RelayCommand<object> _scrollChangedCommand;
 
         #endregion
         #region Private Methods
+        private void ScrollChangedAction(object obj)
+        {
+            var objs = obj as object[];
+            var args = objs[0] as ScrollChangedEventArgs;
+            var element = objs[1] as ScrollViewer;
+            element.ScrollToVerticalOffset(args.VerticalOffset);
+        }
         private void CopyAction(object obj)
         {
             string result = string.Join(Environment.NewLine, _DataTable.Rows.OfType<DataRow>().Select(x => string.Join("\t", x.ItemArray)));

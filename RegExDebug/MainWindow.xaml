@@ -57,10 +57,12 @@
                           >
                     <DockPanel>
                         <ScrollViewer x:Name="sv_regex_lbl" DockPanel.Dock="Left" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
-                            <Label Content="{Binding Regex_line}" Style="{StaticResource lbl_textline}" Padding="5,0" MinWidth="20" DockPanel.Dock="Left"/>
+                            <Label Content="{Binding Regex_line}" Style="{StaticResource lbl_textline}" Padding="5,0" MinWidth="20"/>
                         </ScrollViewer>
                         <Label DockPanel.Dock="Bottom" Content="{Binding Exception_tip}" Foreground="{StaticResource SCB_LIGHTRED}"/>
-                        <ScrollViewer HorizontalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged_1">
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" 
+                                      cus:ScrollExtension.VScrollChanged="{Binding ScrollChangedCommand}"
+                                      cus:ScrollExtension.VScrollTarget="{Binding ElementName=sv_regex_lbl}">
                             <TextBox x:Name="regex_content"                                     
                                      SelectionBrush="DarkOrange"
                                      cus:TextBoxExtension.SelectedText="{Binding Regex_select_content,UpdateSourceTrigger=PropertyChanged}"
@@ -73,14 +75,18 @@
                 <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{StaticResource SCB_GRAY}"
                               Visibility="{Binding Converter={StaticResource bool2visibility},ElementName=mi_replace,Path=IsChecked}"/>
                 <GroupBox Header="{DynamicResource gp_replace_title}"  Grid.Column="2" Visibility="{Binding Converter={StaticResource bool2visibility},ElementName=mi_replace,Path=IsChecked}">
-                    <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                        <DockPanel>
-                            <Label Content="{Binding Replace_line}" Padding="5,0" MinWidth="20"  Style="{StaticResource lbl_textline}"
-                           DockPanel.Dock="Left"/>
-                            <TextBox AcceptsReturn="True" TextWrapping="Wrap"
+
+                    <DockPanel>
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" x:Name="sv_replace_lbl" DockPanel.Dock="Left">
+                            <Label Content="{Binding Replace_line}" Padding="5,0" MinWidth="20"  Style="{StaticResource lbl_textline}"/>
+                        </ScrollViewer>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                                      cus:ScrollExtension.VScrollChanged="{Binding ScrollChangedCommand}"
+                                      cus:ScrollExtension.VScrollTarget="{Binding ElementName=sv_replace_lbl}">
+                            <TextBox AcceptsReturn="True"
                                      Text="{Binding Replace_content,UpdateSourceTrigger=PropertyChanged}" />
-                        </DockPanel>
-                    </ScrollViewer>
+                        </ScrollViewer>
+                    </DockPanel>
                 </GroupBox>
             </Grid>
             <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{StaticResource SCB_GRAY}"/>
@@ -106,7 +112,8 @@
                             <Label Content="{Binding Source_line}" Padding="5,0" MinWidth="20" DockPanel.Dock="Left" Style="{StaticResource lbl_textline}"/>
                         </ScrollViewer>
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"          
-                                      ScrollChanged="ScrollViewer_ScrollChanged"
+                                      cus:ScrollExtension.VScrollChanged="{Binding ScrollChangedCommand}"
+                                      cus:ScrollExtension.VScrollTarget="{Binding ElementName=sv_source_lbl}"
                                       Padding="0,0,5,5"
                                   >
                             <TextBox AcceptsReturn="True" 
@@ -135,9 +142,6 @@
                         </StackPanel>
                     </GroupBox.Header>
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
                         <DataGrid ItemsSource="{Binding ResultCollection}"
                           Visibility="{Binding Converter={StaticResource bool2visibilityde},ElementName=mi_replace,Path=IsChecked}"
                               AutoGenerateColumns="True"
@@ -160,7 +164,8 @@
                                 <Label Content="{Binding Result_line}" Padding="5,0" MinWidth="20" DockPanel.Dock="Left" Style="{StaticResource lbl_textline}"/>
                             </ScrollViewer>
                             <ScrollViewer HorizontalScrollBarVisibility="Auto"          
-                                      ScrollChanged="ScrollViewer_ScrollChanged_2"
+                                     cus:ScrollExtension.VScrollChanged="{Binding ScrollChangedCommand}"
+                                          cus:ScrollExtension.VScrollTarget="{Binding ElementName=sv_result_lbl}"
                                       Padding="0,0,5,5"
                                   >
                                 <TextBox AcceptsReturn="True" 

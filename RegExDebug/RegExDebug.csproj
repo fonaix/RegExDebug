@@ -62,6 +62,7 @@
     <Compile Include="converter\Bool2VisibilityDeconverter.cs" />
     <Compile Include="converter\Boolean2ColumnSpanConverter.cs" />
     <Compile Include="converter\Boolean2VisibilityConverter.cs" />
+    <Compile Include="customs\ScrollExtension.cs" />
     <Compile Include="customs\TextBoxExtension.cs" />
     <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
