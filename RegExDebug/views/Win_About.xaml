@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:RegExDebug.ViewModel"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        ResizeMode="NoResize" FontFamily="Consolas"
+        ResizeMode="NoResize" 
         Title="{DynamicResource mi_about}" Height="200" Width="350">
     <Window.Resources>
         <vm:AboutViewModel x:Key="vm_about"/>
@@ -34,16 +34,16 @@
         </Style>
     </Window.Resources>
     <StackPanel Margin="5" DataContext="{Binding Source={StaticResource vm_about}}">
-        <Label Content="RegEx Debug" FontSize="16" FontWeight="Bold"/>
-        <Label Content="1.6.0 2022/05/16 09:28" Foreground="{StaticResource SCB_BLACK}"/>
-        <Label Content="Copyright © fonaix 2020 ~"/>
+        <Label Content="RegEx Debug" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Label Content="1.6.0 2020/05/16" Foreground="{StaticResource SCB_BLACK}" HorizontalContentAlignment="Center"/>
+        <Label Content="Copyright © fonaix 2020 ~ " HorizontalContentAlignment="Center"/>
         <StackPanel Orientation="Horizontal">
-            <Label Content="github:" MinWidth="60" FontWeight="Bold"/>
-            <Button Content="https://github.com/fonaix/regexdebug" Style="{StaticResource lbl_link}" Command="{Binding LinkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=Content}"/>
+            <Label Content="gitee:" MinWidth="90" FontWeight="Bold"/>
+            <Button Content="https://gitee.com/fonaix/regexdebug" Tag="" Style="{StaticResource lbl_link}" Command="{Binding LinkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=Content}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="gitee:" MinWidth="60" FontWeight="Bold"/>
-            <Button Content="https://gitee.com/fonaix/regexdebug" Style="{StaticResource lbl_link}" Command="{Binding LinkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=Content}"/>
-        </StackPanel>
+            <Label Content="Fugue Icons:" MinWidth="90" FontWeight="Bold"/>
+            <Button Content="https://p.yusukekamiyamane.com" Style="{StaticResource lbl_link}" Command="{Binding LinkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=Content}"/>
+        </StackPanel> 
     </StackPanel>
 </Window>

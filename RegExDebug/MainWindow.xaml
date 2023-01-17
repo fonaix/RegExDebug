@@ -40,7 +40,7 @@
             </MenuItem>
             <MenuItem Header="{DynamicResource mi_about}" Tag="/Resources/information.png"  Style="{StaticResource mi_img_text}" Command="{Binding AboutCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
         </Menu>
-        <Grid>
+        <Grid Margin="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height=".4*"/>
                 <RowDefinition Height="3"/>
